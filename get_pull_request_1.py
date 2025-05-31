@@ -14,6 +14,7 @@ print(type(complete_details))
 # Each of these values is accessed using the appropriate key in the dictionary.
 # After printing the details for each pull request, a line of dashes is printed to visually separate the output for each entry, making the results easier to read. Finally, an empty print() statement is used to add a blank line after all pull requests have been listed, improving the readability of the output in the terminal or output pane. 
 # This approach is clear and Pythonic, as it directly iterates over the list elements rather than using indices.
+
 for pull_request in complete_details:
     print(f"Pull Request ID: {pull_request['id']}")
     print(f"Title: {pull_request['title']}")
