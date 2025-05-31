@@ -6,7 +6,8 @@ def update_server_conf(file_path, key, value):
         for line in lines:
             if key in line:
                 # Update the line with the new value
-                file.write(key + '=' + value + '\n')
+                #file.write(key + '=' + value + '\n')
+                file.write(f"{key} = {value}\n")
             else:
                 # Write the line as it is
                 file.write(line)
