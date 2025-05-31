@@ -21,13 +21,14 @@ for pr in output:
 
     # If user is already in dictionary, increment their count
     if user_login in user_count:
+        #user_count[user_login] = user_count[user_login] + 1
         user_count[user_login] += 1
     else:
         # Otherwise, add the user to the dictionary with an initial count of 1
         user_count[user_login] = 1
 
 # Print the count of pull requests made by each user
-print("\nPull request counts for all users:")
+print("Pull request counts for all users:")
 for user, count in user_count.items():
     print(f"{user}: {count}")
 
