@@ -27,7 +27,7 @@ for pr in output:
         user_count[user_login] = 1
 
 # Print the count of pull requests made by each user
-print("Pull request counts for all users:")
+print("\nPull request counts for all users:")
 for user, count in user_count.items():
     print(f"{user}: {count}")
 
