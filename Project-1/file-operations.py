@@ -26,4 +26,4 @@ def update_server_conf(file_path, key, value):
                 file.write(line)
 
 # Example Usage
-update_server_conf('server.conf', 'MAX_CONNECTIONS', '400')
+update_server_conf('server.conf', 'MAX_CONNECTIONS', '450')
