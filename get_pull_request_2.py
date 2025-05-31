@@ -1,3 +1,5 @@
+# Calculating the pull request count for each user in the Kubernetes repository
+# This script retrieves pull requests from the Kubernetes repository on GitHub and counts how many pull requests each user has made.
 import requests
 url="https://api.github.com/repos/kubernetes/kubernetes/pulls"
 response=requests.get(url)
