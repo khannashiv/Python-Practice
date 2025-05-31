@@ -17,7 +17,7 @@ for folder in folders:
 
 
 # This code snippet prompts the user to enter a list of folder names, separated by spaces. 
-# The input is read as a single string and then split into a list of folder names using the split() method, which by default splits on whitespace. 
+# The input function will read as a single string and then split into a list of folder names using the split() method, which by default splits on whitespace. 
 # This allows the user to specify multiple folders in one line.
 # The code then iterates over each folder name in the list. For each folder, it prints a message indicating that it will list the files under that directory. 
 # It attempts to retrieve the list of files in the folder using os.listdir(folder). If the folder does not exist, a FileNotFoundError is caught, and an error message is printed. 
