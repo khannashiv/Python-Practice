@@ -15,6 +15,6 @@ ec2_info = [
     }
 ]
 
-print(ec2_info[1])
-print(ec2_info[2]["type"])
-print(ec2_info[0]["id"])
+print(ec2_info[1])         # This will print the second dictionary in the list, which contains the id and type of the second EC2 instance.
+print(ec2_info[2]["type"]) # This will print the type of the third EC2 instance.
+print(ec2_info[0]["id"])   # This will print the id of the first EC2 instance.
