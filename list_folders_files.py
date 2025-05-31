@@ -7,8 +7,12 @@ folders = input("Please provide list of folders with spaces - ").split()
 # print(folders)
 
 for folder in folders:
-    #print(folder)
-    files=os.listdir(folder)
+    # print(folder)
+    try:
+        files=os.listdir(folder)
+    except FileNotFoundError:
+        print(f"Folder '{folder}' does not exist.")
+        continue
     for file in files:
         print("Printing files in folder:", folder)
         print(file)
