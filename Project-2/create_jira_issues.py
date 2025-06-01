@@ -28,8 +28,8 @@ headers = {
 payload = json.dumps({
     "fields": {
         "issuetype": {"id": "10007"},  # Issue type ID, e.g., 10009 corresponds to "Task" (verify in your Jira instance)
-        #"project": {"key": "SP1"},  # Project key, replace with your project's key (e.g., 'SP1')
-        "project": {"id": "10001"},  # Alternatively, you could use project ID (this line is commented out)
+        "project": {"key": "SP1"},  # Project key, replace with your project's key (e.g., 'SP1')
+        #"project": {"id": "10001"},  # Alternatively, you could use project ID (this line is commented out)
         "summary": "Dummy issue for testing"  # Summary of the issue (title)
         # You can add other fields like 'description', 'priority', 'labels' here
     }
