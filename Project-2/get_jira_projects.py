@@ -81,4 +81,20 @@ print(json.dumps(
     separators=(",", ": ")      # Use custom separators (comma, colon with space)
 ))
 # -------------------------------------
-# The above code retrieves all projects from a Jira instance and prints them in a formatted JSON structure.
+
+output_1 = json.loads(response.text) # This will convert the JSON response into a Python list of dictionaries
+# print(f'Name of my first project is  - ', output_1[0]["name"]) # This will print the name of the first project
+# print(f'Name of my second project is - ', output_1[1]["name"]) # This will print the name of the second project
+
+# Loop through the list of projects and print the name of each project
+
+# Method 1: Using a for loop with range
+for i in range(len(output_1)):
+    # print(type(i))    # This will print the type of i, which is an integer
+    # print(i)          # This will print the index of the project
+    print(f'Project {i+1} name is - ', output_1[i]["name"])
+
+# Method 2: Using a for loop to iterate through the list directly
+for i in output_1:
+    # print(type(i)) # This will print the type of i, which is a dictionary
+    print(i["name"])  # This will print the name of each project in the list
