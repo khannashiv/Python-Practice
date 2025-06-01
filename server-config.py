@@ -1,5 +1,4 @@
 # Server configurations dictionary
-# Server configurations dictionary
 server_config = {
     'server1': {'ip': '192.168.1.1', 'port': 8080, 'status': 'active'},
     'server2': {'ip': '192.168.1.2', 'port': 8000, 'status': 'inactive'},
@@ -21,7 +20,6 @@ def get_server_info(server_name):
 server_info = get_server_info('server3')
 print(f"Server3 status and port number: {server_info}")
 
-
 ########################### Summary ##########################
 
 # How It Works in this context ?
@@ -29,7 +27,6 @@ print(f"Server3 status and port number: {server_info}")
     # If server_name exists in server_config, the corresponding server details (like 'ip', 'port', 'status') will be returned as the value for that key.
     # If server_name does not exist, {} (an empty dictionary) will be returned instead, 
     # and you can safely attempt to retrieve values from this empty dictionary later in the code (without causing any errors).
-
 
 ################## PRACTICE ##################################
 
@@ -39,7 +36,6 @@ print(f"Server3 status and port number: {server_info}")
 # print(server_config.get('server4'))  # This will attempt to retrieve server4's configuration, returning 'Server not found' if it does not exist.
 # print(server_config.get('server1').get('ip')) # This will retrieve the IP address of server1.
  
-
 ################## GET Function in Python ######################
 
 # About the get() function in Python.
