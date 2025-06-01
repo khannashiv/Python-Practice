@@ -5,7 +5,7 @@ import json                              # To handle JSON data
 import os                    # For interacting with the operating system (e.g., to load environment variables)
 from dotenv import load_dotenv           # For loading environment variables from a .env file
 
-# Load environment variables from a .env file (ensure that JIRA_API_TOKEN is set in this file)
+# Load environment variables from a .env file (ensure that JIRA_API_TOKEN & JIRA_EMAIL are set in this file)
 load_dotenv()
 
 # Jira API endpoint for creating an issue
@@ -31,7 +31,7 @@ payload = json.dumps({
         "project": {"key": "SP1"},             # Project key, replace with your project's key (e.g., 'SP1')
         #"project": {"id": "10001"},           # Alternatively, you could use project ID (this line is commented out)
         "summary": "Dummy issue for testing"   # Summary of the issue (title)
-        # You can add other fields like 'description', 'priority', 'labels' here ...
+        # We can add other fields like 'description', 'priority', 'labels' here ...
     }
 })
 
