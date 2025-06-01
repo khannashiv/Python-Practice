@@ -6,11 +6,13 @@ import json
 import os
 from dotenv import load_dotenv
 
+url   = "https://shiventerprise.atlassian.net/rest/api/3/project"
+email = "shiv.khanna29@gmail.com"
+
 # Load environment variables from .env file
 load_dotenv()
 
-url = "https://shiventerprise.atlassian.net/rest/api/3/project"
-auth = HTTPBasicAuth("shiv.khanna29@gmail.com", os.getenv("JIRA_API_TOKEN"))
+auth = HTTPBasicAuth(email, os.getenv("JIRA_API_TOKEN"))
 
 headers = {
   "Accept": "application/json"
