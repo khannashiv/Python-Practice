@@ -23,5 +23,5 @@ response = requests.request(
    auth=auth
 )
 
-#print(os.getenv("JIRA_API_TOKEN"))
+# print(os.getenv("JIRA_API_TOKEN")) --- > For debugging purposes, you can uncomment this line to see the token
 print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
