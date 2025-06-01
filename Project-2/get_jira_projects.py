@@ -62,6 +62,7 @@ response = requests.request(
 # You can use dir() to see all the attributes and methods available in the response object.
 # print(type(response))  # Print the type of the response object, for example, it should be <class 'requests.models.Response'>
 # print(dir(response)) # Uncomment this line to see all attributes and methods of the response object
+# print(dir(requests)) # Uncomment this line to see all attributes and methods of the requests module
 #--------------------------------------
 
 # -------------------------------------
