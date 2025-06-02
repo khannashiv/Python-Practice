@@ -35,7 +35,7 @@ def Create_Jira():
     }
 
     # Check if the request has content and if it contains the "/jira" command
-    data = request.get_json()  # Get the JSON data from the incoming request
+    data = request.get_json()  # Get the JSON data from the incoming request (from git which is acting as client to flask server) and parse it to a Python dictionary
     
     # Check if the message includes '/jira' (e.g., under the issue description or body)
     if '/jira' in data['comment']['body'].lower():
