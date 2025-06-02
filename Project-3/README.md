@@ -125,21 +125,21 @@ Below are example screenshots showing the integration in action:
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [GitHub Webhooks](https://docs.github.com/en/webhooks)
 - [Jira REST API Documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/)
-- https://medium.com/@obotnt/understanding-the-difference-between-get-json-and-request-json-in-flask-d612d1fbc895
+- [Understanding the Difference Between `get_json()` and `request.json` in Flask](https://medium.com/@obotnt/understanding-the-difference-between-get-json-and-request-json-in-flask-d612d1fbc895)
 
 
 <!-- 
 
 Q : What is request.get_json()?
 Sol : 
--- When the client sends the POST request with the JSON data, the Flask application receives the request in the request object.
--- The request.get_json() method is called to parse the JSON data from the request body.
--- Flask automatically converts the JSON string into a Python dictionary so that you can work with it easily.
--- You can now access the data like any other dictionary in Python (using data['key']).
--- Flask returns a JSON response to the client confirming the task that needs to be performed user creation.
+- When the client sends the POST request with the JSON data, the Flask application receives the request in the request object.
+- The request.get_json() method is called to parse the JSON data from the request body.
+- Flask automatically converts the JSON string into a Python dictionary so that you can work with it easily.
+- We can now access the data like any other dictionary in Python (using data['key']).
+- Flask returns a JSON response to the client confirming the task that needs to be performed.
 
-In Flask, the request object represents the incoming HTTP request made by a client (like a browser or a tool like Postman or cURL). When you send data in a POST request, especially JSON data, it’s included in the request body.
+>> In Flask, the request object represents the incoming HTTP request made by a client (like a browser or a tool like Postman or cURL). When we send data in a POST request, especially JSON data, it’s included in the request body.
 
-request.get_json() is a method in Flask used to extract JSON data sent in the request body. When a client sends data as JSON, this method will parse the JSON and convert it into a Python dictionary so that your Python code can work with it.
+>> request.get_json() is a method in Flask used to extract JSON data sent in the request body. When a client sends data as JSON, this method will parse the JSON and convert it into a Python dictionary so that your Python code can work with it.
 
  -->
