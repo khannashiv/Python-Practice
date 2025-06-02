@@ -1,5 +1,5 @@
 # Import necessary libraries
-from flask import Flask, request  # Import 'request' to handle incoming data
+from flask import Flask, request         # Import 'request' to handle incoming data
 import requests                          # Library to make HTTP requests
 from requests.auth import HTTPBasicAuth  # For HTTP Basic Authentication
 import json                              # To handle JSON data
@@ -35,7 +35,7 @@ def Create_Jira():
     }
 
     # Check if the request has content and if it contains the "/jira" command
-    data = request.get_json()  # Get the JSON data from the incoming POST request
+    data = request.get_json()  # Get the JSON data from the incoming request
     
     # Check if the message includes '/jira' (e.g., under the issue description or body)
     if '/jira' in data['comment']['body'].lower():
