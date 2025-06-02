@@ -64,5 +64,3 @@ Project-2/
 - [Sample Jira Project API Response (SP1)](https://shiventerprise.atlassian.net/rest/api/latest/project/SP1)
 
 ---
-
-> Refer to this guide whenever setting up or running Project-2.
