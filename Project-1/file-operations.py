@@ -11,7 +11,7 @@
 def update_server_conf(file_path, key, value):
     # Open the file in read mode to get all lines
     with open(file_path, 'r') as file:
-        lines = file.readlines()  # Read all lines into a list
+        lines = file.readlines()  # Read all lines from file object and store them in a list where each line is an element.
 
     # Open the file in write mode to update or rewrite lines
     with open(file_path, 'w') as file:
