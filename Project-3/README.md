@@ -103,6 +103,9 @@ Below are example screenshots showing the integration in action:
 - ![Git-jira-7](../Images/Git-jira-7.png)
 - ![Git-jira-8](../Images/Git-jira-8.png)
 - ![Git-jira-9](../Images/Git-jira-9.png)
+- ![Git-jira-10](../Images/Git-jira-10.png)
+- ![Git-jira-11](../Images/Git-jira-11.png)
+- ![Git-jira-12](../Images/Git-jira-12.png)
 
 ---
 
