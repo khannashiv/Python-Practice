@@ -35,7 +35,11 @@ def Create_Jira():
     }
 
     # Check if the request has content and if it contains the "/jira" command
-    data = request.get_json()  # Get the JSON data from the incoming request (from git which is acting as client to flask server) and parse it to a Python dictionary
+    data = request.get_json()      # Get the JSON data from the incoming request (from git which is acting as client to flask server) and parse it to a Python dictionary
+    print("Received data:", data)  # Print the received data for debugging purposes.
+ 
+    if not data or 'comment' not in data or 'body' not in data['comment']:
+        return "Invalid request data. No Jira ticket created."
     
     # Check if the message includes '/jira' (e.g., under the issue description or body)
     if '/jira' in data['comment']['body'].lower():
