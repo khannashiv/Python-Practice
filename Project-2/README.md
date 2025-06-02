@@ -5,7 +5,7 @@ Project 2 Documentation .
 This file provides an overview of Project 2, detailing the objectives, features, and progress made. Under Project 2, we have implemented and documented various Python programming exercises and mini-projects to enhance practical coding skills. The project includes problem statements, solutions, and explanations for each task undertaken, serving as a comprehensive reference for learning and revision.
 -->
 ## 📝 Overview
-This project provides Python scripts and step-by-step instructions for automating interactions with Jira via its REST API. You can use these scripts to:
+This project provides Python scripts and step-by-step instructions for automating interactions with Jira via its REST API. We have done the following tasks:
 
 - **Retrieve all Jira projects:** Fetch a list of all projects from your Jira instance for reporting or management purposes.
 - **Create Jira issues programmatically:** Automate the creation of issues (tasks, bugs, etc.) in specific projects, saving time and reducing manual effort.
