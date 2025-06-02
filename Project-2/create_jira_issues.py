@@ -1,3 +1,24 @@
+"""
+===============================================================================
+create_jira_issues.py
+-------------------------------------------------------------------------------
+This script creates a new issue in a Jira project using Jira's REST API v3.
+Features:
+- Loads Jira credentials (email and API token) from a .env file for security.
+- Constructs and sends a POST request to create an issue in the specified Jira project.
+- Prints the API response, which contains details about the created issue or error messages.
+Requirements:
+- requests
+- python-dotenv
+Environment Variables (to be set in .env file):
+- JIRA_EMAIL:     Pull from .env file, your Jira account email.
+- JIRA_API_TOKEN: Pull from .env file, your Jira API token.
+Usage:
+- Update the project key and issue type ID as per your Jira instance.
+- Run the script to create a dummy issue in the specified Jira project.
+Author: Shiv Kumar Khanna
+===============================================================================
+"""
 # Import necessary libraries
 import requests                          # Library to make HTTP requests
 from requests.auth import HTTPBasicAuth  # For HTTP Basic Authentication

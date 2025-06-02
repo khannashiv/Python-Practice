@@ -1,3 +1,18 @@
+"""
+get_jira_projects.py
+This script retrieves and displays a list of Jira projects from an Atlassian Jira Cloud instance using the Jira REST API v3.
+It authenticates using an email address and an API token (loaded securely from a .env file), sends a GET request to the Jira API,
+and prints the project details in a human-readable JSON format. The script also demonstrates how to extract and print the names
+of all projects returned by the API.
+Requirements:
+- requests
+- python-dotenv
+Environment Variables:
+- JIRA_API_TOKEN: Your Jira API token, stored in a .env file.
+Usage:
+- Ensure your .env file contains the JIRA_API_TOKEN variable.
+- Run the script to list all projects accessible to your Jira account.
+"""
 # Import the requests library for making HTTP requests
 import requests
 
@@ -95,7 +110,7 @@ for i in range(len(output_1)):
     # print(i)          # This will print the index of the project
     print(f'Project {i+1} name is - ', output_1[i]["name"])
 
-# Method 2: Using a for loop to iterate through the list directly
+# Method 2: Using a for loop to iterate through python data-structure such as (list//dictionary//list of dictionaries) directly.
 for i in output_1:
     # print(type(i)) # This will print the type of i, which is a dictionary
     print(i["name"])  # This will print the name of each project in the list

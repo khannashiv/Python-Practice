@@ -13,6 +13,8 @@ Project-2/
 ├── .env
 └── .gitignore
 |__ create_jira_issues.py
+|__ README.md
+|__ sample_jira_project.py
 
 ```
 
@@ -33,9 +35,11 @@ Project-2/
    ```
 
 4. **Run the script:**  
-   Execute the script with:
+   Execute the following script one by one since they are independent of each other:
    ```
-   python get_all_projects.py
+   python get_jira_projects.py
+   python create_jira_issues.py
+   python sample_jira_project.py
    ```
 
 ---
