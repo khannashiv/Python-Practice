@@ -112,7 +112,7 @@ Below are example screenshots showing the integration in action:
   ```bash
   deactivate
   ```
-- Ensure your EC2 instance allows inbound traffic on the port used by Flask (default: 5000).
+- Ensure your EC2 instance allows inbound traffic on the port used by Flask (default: 5000, whereas in our case app is running on 9000).
 - For production, consider using a production-ready server (e.g., Gunicorn) and HTTPS.
 
 ---
