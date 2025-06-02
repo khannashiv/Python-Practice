@@ -34,10 +34,15 @@ def Create_Jira():
         "Content-Type": "application/json"  # Send the request body in JSON format
     }
 
-    # Check if the request has content and if it contains the "/jira" command
-    data = request.get_json()      # Get the JSON data from the incoming request (from git which is acting as client to flask server) and parse it to a Python dictionary
+    # Get the JSON data from the incoming request
+    # This data is expected to be sent by the client (e.g., GitHub webhook)
+    data = request.get_json()      # Parse the incoming JSON data from the request body and convert it to a Python dictionary.
     print("Received data:", data)  # Print the received data for debugging purposes.
     
+    # Check if the data is valid and contains the expected fields.
+    # Ensure that the data contains 'comment' and 'body' keys.
+    # If not, return an error message indicating that no Jira ticket was created.
+    # This is important to avoid errors when accessing these keys.
     if not data or 'comment' not in data or 'body' not in data['comment']:
         return "Invalid request data. No Jira ticket created."
     
