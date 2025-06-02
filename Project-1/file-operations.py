@@ -1,15 +1,14 @@
-def update_server_conf(file_path, key, value):
-    """
-    Updates a specific key-value pair in a configuration file.
-    If the key exists in the file, its value is updated.
-    If the key is not found, it is NOT added to the file.
-    
-    Args:
-        file_path (str): Path to the configuration file.
-        key (str): Configuration key to update.
-        value (str): New value for the key.
-    """
+# Description:
 
+#     This script provides a utility function to update the value of a specific key in a configuration file.
+#     The configuration file i.e. server.conf is expected to contain key-value pairs, typically in the format 'key = value'.
+# Functionality:
+#     - Reads all lines from the given configuration file.
+#     - Searches for the specified key in each line.
+#     - If the key is found in a line, replaces the entire line with the updated key-value pair.
+#     - Writes all lines (updated or unchanged) back to the file, preserving the original structure except for the updated key.
+
+def update_server_conf(file_path, key, value):
     # Open the file in read mode to get all lines
     with open(file_path, 'r') as file:
         lines = file.readlines()  # Read all lines into a list
