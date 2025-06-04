@@ -1,5 +1,5 @@
-import os
 # This script lists files in multiple directories specified by the user.
+import os
 folders = input("Please provide list of folders with spaces - ").split()
  
 for folder in folders:
