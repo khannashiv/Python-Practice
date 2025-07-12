@@ -147,23 +147,23 @@
 
 # Method 1 : Using for loop.
 
-num=int(input("Please enter the number of your choice. "))
-n1=0 # Meaning value of 1st element of series.
-n2=1 # Meaning value of 2nd element in the series.
+# num=int(input("Please enter the number of your choice. "))
+# n1=0 # Meaning value of 1st element of series.
+# n2=1 # Meaning value of 2nd element in the series.
 
-if num <= 0:
-    print("Please enter the valid number. ")
-elif num == 1:
-    print(n1)
-elif num == 2:
-    print(n2)
-else:
-    for i in range(num):
-        total = n1 + n2
-        n1=n2
-        n2=total
-        print(total) # To print entire fiboncaci series.
-    # print(total) # To print last or final element of fibonacci series.
+# if num <= 0:
+#     print("Please enter the valid number. ")
+# elif num == 1:
+#     print(n1)
+# elif num == 2:
+#     print(n2)
+# else:
+#     for i in range(num):
+#         total = n1 + n2
+#         n1=n2
+#         n2=total
+#         print(total) # To print entire fiboncaci series.
+#     # print(total) # To print last or final element of fibonacci series.
 
 # Method 2 : Using while loop.
 
@@ -186,3 +186,21 @@ else:
 #         counter += 1
 #         print(total) # To print entire fiboncaci series.
 #     # print(total) # To print last or final element of fibonacci series.
+
+# Method 3 : Using recursion.
+
+def fib(n):
+    if n <=0:
+        print("Please enter positive natural number. ")
+    elif n==1:
+        return 0
+    elif n==2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+n=int(input("Please enter your input. "))
+print(fib(n)) # To print final element of fibonacci series.
+
+# for i in range(n): # To print entire series till the value of n.
+#     print(fib(i))
