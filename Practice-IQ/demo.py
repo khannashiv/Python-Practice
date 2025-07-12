@@ -286,18 +286,18 @@
 
 # my_num = 343
 # temp = my_num
-# rev = 0
+# sum = 0
 
 # while my_num > 0:
 #     rem = my_num%10
-#     rev = rev*10 + rem
+#     sum = sum*10 + rem
 #     my_num = my_num//10
 
-# print(rev)
+# print(sum)
 
 # # Method 3 & Condition 3.....  Check if given number is pallindrome or not.
 
-# if ( rev == temp ):
+# if ( sum == temp ):
 #     print("Given number is palindrome. ")
 # else:
 #     print("Given number is not pallindrome. ")
@@ -306,19 +306,19 @@
 
 # Sol 8 :
 
-test_num=153
-temp=test_num
-rev=0
-order= len(str(test_num))
+# test_num=153
+# temp=test_num
+# sum=0
+# order= len(str(test_num))
 
-while test_num > 0:
-    rem = test_num%10
-    rev = rev + rem**order
-    test_num = test_num//10
+# while test_num > 0:
+#     rem = test_num%10
+#     sum = sum + rem**order
+#     test_num = test_num//10
 
-print(rev)
+# print(sum)
 
-if ( rev == temp ):
-    print("The given number is armstrong number. ")
-else:
-    print("The given number is not armstrong number. ")
+# if ( sum == temp ):
+#     print("The given number is armstrong number. ")
+# else:
+#     print("The given number is not armstrong number. ")
