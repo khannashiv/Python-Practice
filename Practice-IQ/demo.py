@@ -162,7 +162,7 @@ else:
         total = n1 + n2
         n1=n2
         n2=total
-        print(total) # To print entire fiboncaci serues.
+        print(total) # To print entire fiboncaci series.
     # print(total) # To print last or final element of fibonacci series.
 
 # Method 2 : Using while loop.
