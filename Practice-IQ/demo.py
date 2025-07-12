@@ -322,3 +322,50 @@
 #     print("The given number is armstrong number. ")
 # else:
 #     print("The given number is not armstrong number. ")
+
+# Ques 9 : How to find factorial of number using recursive approach as well as without recursive 
+# approach ?
+
+# Sol 9 :
+
+# Method 1. Using recursion
+
+# def fact(n):
+#     if n < 0:
+#         print("Please provide valid input")
+#         return None
+#     elif n == 0:
+#         return 1
+#     elif n == 1:
+#         return 1
+#     else:
+#         return n*fact(n-1)
+    
+# n = int(input("Please provide the value of n "))
+# result = fact(n)
+
+# if result is not None:
+#     print(f"Factorial of the given number is: {result}")
+
+# Method 2 Without recursion.
+
+# num = int(input("Please enter a number of your choice: "))
+# fact=1
+
+# if num < 0:
+#     print(" Please enter positive number.")
+# elif num == 0:
+#     print(1)
+# elif num == 1:
+#     print(1)
+# else:
+#     for i in range(1, num+1):
+#         fact=fact*i
+#     print(fact)
+
+# Ques 10: How to calculate number of words in given sentence ?
+# Sol 10:
+dummy_sent = "My name is Shiv. "
+print(len(dummy_sent))
+print(dummy_sent.split())
+print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
