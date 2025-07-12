@@ -391,7 +391,72 @@
 
 # Ques 13: Remove empty list from the given list ?
 # Sol 13:
-test_arr = [1, 2, 30, [], 91, [], 8, [], 10, [1,2,3]]
-for i in test_arr:
-    if i != []:
-        print(i)
+# test_arr = [1, 2, 30, [], 91, [], 8, [], 10, [1,2,3]]
+# for i in test_arr:
+#     if i != []:
+#         print(i)
+
+############### Pattern ################## 
+
+### P1. Upper Pyramid with required pattern.
+
+# n=5
+
+# for i in range(n):
+#     for j in range(i+1):
+#         print("*", end='')
+#     print()
+
+### P2.  Lower pyramid with required pattern
+# for i in range(n):
+#     for j in range(n-i):
+#         print("*", end='')
+#     print()
+
+### P3. Upper Pyramid with required pattern.
+# for i in range(n):
+#     for j in range(i+1):
+#         print(j+1, end='')
+#     print()
+
+### P4. Lower Pyramid with required pattern.
+# for i in range(n):
+#     for j in range(n-i):
+#         print(j+1, end='')
+#     print()
+
+###########################################  
+
+# Ques : 14 :  To find if given year taken as input is leap year or not ?
+# Sol : 14
+
+# year_input = int(input("Please enter your input to check if the given year is leap year or not ? "))
+
+# if (year_input%4 == 0) and (year_input%100 != 0):
+#     print("Yes, entered year is leap year. ")
+# elif (year_input%100 == 0) and (year_input%400 ==0 ):
+#     print("Again this condition statisfies leap year, Hence this is a **LEAP-YEAR** ")
+# else:
+#     print("otherwise year is not leap year. ")
+
+# Ques: 15 Print the list of integers from a string without spaces ?
+# Sol : 15
+# num_dummy=10
+# for i in range(num_dummy):
+#     # print(i)           # Here output is getting printed in next line for each element. 
+#     # print(i, end="")   # Printing without spaces. Here it's printing output horizontally in 1 line.
+
+
+# Ques: 16 find the maximum number of consecutive zeroes in a string containing 1's and 0's.
+# Sol: 16
+
+str1="11000001110010101010101000"
+
+## Method 1.
+print(str1.split('1'))
+print(max(str1.split('1')))
+print(len(max(str1.split('1'))))
+
+## Method 2.
+max_zero_occurance = max(len(i) for i in str1.split('1'))
+print(max_zero_occurance)
