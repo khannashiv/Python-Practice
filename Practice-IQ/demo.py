@@ -509,8 +509,8 @@ print(dict_1)
 print(dict_1.keys())
 print(dict_1.values())
 print(dict_1.items())
-print(min(dict_1, key = dict_1.get)) # Minimum value against a key.
-print(max(dict_1, key = dict_1.get)) # Maximum value against a key.
-print(dict_1['a']) # Check the occurance of particular key.
+print(min(dict_1, key = dict_1.get))    # Minimum value against a key.
+print(max(dict_1, key = dict_1.get))    # Maximum value against a key.
+print(dict_1['a'])                      # Check the occurance of particular key.
 print(dict_1['d'])
 
