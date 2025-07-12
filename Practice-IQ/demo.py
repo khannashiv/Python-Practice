@@ -147,30 +147,9 @@
 
 # Method 1 : Using for loop.
 
-# num=int(input("Please enter the number of your choice. "))
-# n1=0 # Meaning value of 1st element of series.
-# n2=1 # Meaning value of 2nd element in the series.
-
-# if num <= 0:
-#     print("Please enter the valid number. ")
-# elif num == 1:
-#     print(n1)
-# elif num == 2:
-#     print(n2)
-# else:
-#     for i in range(3, num):
-#         total = n1 + n2
-#         n1=n2
-#         n2=total
-#         #print(total) # To print entire fiboncaci serues.
-#     print(total) # To print last or final element of fibonacci series.
-
-# Method 2 : Using while loop.
-
 num=int(input("Please enter the number of your choice. "))
 n1=0 # Meaning value of 1st element of series.
 n2=1 # Meaning value of 2nd element in the series.
-counter=0
 
 if num <= 0:
     print("Please enter the valid number. ")
@@ -179,10 +158,31 @@ elif num == 1:
 elif num == 2:
     print(n2)
 else:
-    while counter < num:
+    for i in range(num):
         total = n1 + n2
         n1=n2
         n2=total
-        counter += 1
-        print(total) # To print entire fiboncaci series.
+        print(total) # To print entire fiboncaci serues.
     # print(total) # To print last or final element of fibonacci series.
+
+# Method 2 : Using while loop.
+
+# num=int(input("Please enter the number of your choice. "))
+# n1=0 # Meaning value of 1st element of series.
+# n2=1 # Meaning value of 2nd element in the series.
+# counter=0
+
+# if num <= 0:
+#     print("Please enter the valid number. ")
+# elif num == 1:
+#     print(n1)
+# elif num == 2:
+#     print(n2)
+# else:
+#     while counter < num:
+#         total = n1 + n2
+#         n1=n2
+#         n2=total
+#         counter += 1
+#         print(total) # To print entire fiboncaci series.
+#     # print(total) # To print last or final element of fibonacci series.
