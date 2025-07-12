@@ -450,13 +450,67 @@
 # Ques: 16 find the maximum number of consecutive zeroes in a string containing 1's and 0's.
 # Sol: 16
 
-str1="11000001110010101010101000"
+# str1="11000001110010101010101000"
 
-## Method 1.
-print(str1.split('1'))
-print(max(str1.split('1')))
-print(len(max(str1.split('1'))))
+# ## Method 1.
+# print(str1.split('1'))
+# print(max(str1.split('1')))
+# print(len(max(str1.split('1'))))
 
-## Method 2.
-max_zero_occurance = max(len(i) for i in str1.split('1'))
-print(max_zero_occurance)
+# ## Method 2.
+# max_zero_occurance = max(len(i) for i in str1.split('1'))
+# print(max_zero_occurance)
+
+# Ques: 17 Solve Fizz-Buzz Problem using conventional as well as via dictionary ?
+# Sol :17
+
+# M1 - Method 1
+
+# num=int(input("Please enter a number of your choice: "))
+
+# for i in range(num):
+#     if (i%3 == 0) and (i%5 == 0):
+#         print("Fizz-Buzz")
+#     elif i%5 == 0:
+#         print("Buzz")
+#     elif (i%3 == 0):
+#         print("Fizz")
+#     else:
+#         print(i)
+
+# M2 - Using dictionaries.
+
+# dic = {3:"Fizz", 5:"Buzz"}
+# for i in range(num):
+#     result = ""
+#     for x,y in dic.items():
+#         if i%x == 0:
+#             result +=  y
+#     # print(result) # This will return empty string where all division has not happened.
+#     if  result == "":
+#         result = i
+#     print(result)
+
+# Ques: 18 To find the least repeating character in the string ?
+# Sol 18. 
+my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
+my_list = list(my_str)
+print (my_list)
+freq = my_list.count('a')
+print(freq)
+mod_freq =  [ my_list.count(i) for i in my_list ]
+z = zip (my_list, mod_freq)
+# print(tuple(z))
+# The dictionary will only retain the last occurrence of each key. 
+# That’s because Python dictionaries are designed to have unique keys — any 
+# duplicate keys get overwritten during construction.
+dict_1 = dict(z)
+print(dict_1)
+print(dict_1.keys())
+print(dict_1.values())
+print(dict_1.items())
+print(min(dict_1, key = dict_1.get)) # Minimum value against a key.
+print(max(dict_1, key = dict_1.get)) # Maximum value against a key.
+print(dict_1['a']) # Check the occurance of particular key.
+print(dict_1['d'])
+
