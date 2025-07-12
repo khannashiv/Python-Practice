@@ -365,7 +365,33 @@
 
 # Ques 10: How to calculate number of words in given sentence ?
 # Sol 10:
-dummy_sent = "My name is Shiv. "
-print(len(dummy_sent))
-print(dummy_sent.split())
-print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
+# dummy_sent = "My name is Shiv. I'm playing Cricket. "
+# print(len(dummy_sent))
+# print(dummy_sent.split())
+# print(dummy_sent.rstrip())
+# print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
+
+# Ques 11: How to clear the list ?
+# Sol 11 :
+
+# list_1 = [1, 2, 3, 4, 5, "abc", "xyz", (9,8,6), [11, 12, 13]]
+# print(f"Printing the values of list before clearing: {list_1}")
+
+# list_1.clear()
+# print(f"Printing the values of list after clearing: {list_1}")
+
+# Ques 12 : Calculate the length of array without using len function?
+# Sol 12:
+
+# dummy_arr=[1, 2, 3, 4, 5]
+# counter = 0
+# for i in dummy_arr:
+#     counter += 1
+# print(f"Length of the given array is : {counter}")
+
+# Ques 13: Remove empty list from the given list ?
+# Sol 13:
+test_arr = [1, 2, 30, [], 91, [], 8, [], 10, [1,2,3]]
+for i in test_arr:
+    if i != []:
+        print(i)
