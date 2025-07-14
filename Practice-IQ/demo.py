@@ -368,11 +368,11 @@
 
 # Ques 10: How to calculate number of words in given sentence ?
 # Sol 10:
-dummy_sent = "My name is Shiv. I'm playing Cricket. "
+# dummy_sent = "My name is Shiv. I'm playing Cricket. "
 # print(len(dummy_sent))
 # print(dummy_sent.split())
 # print(dummy_sent.rstrip())
-print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
+# print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
 
 # Ques 11: How to clear the list ?
 # Sol 11 :
@@ -512,13 +512,13 @@ print(len(dummy_sent.split())) # Final solution : Use split function & eventuall
 
 # Ques: 18 To find the least repeating character in the string ?
 # Sol 18. 
-my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
-my_list = list(my_str)
+# my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
+# my_list = list(my_str)
 # print (my_list)
 # freq = my_list.count('a')
 # print(freq)
-mod_freq =  [ my_list.count(i) for i in my_list ]
-print(mod_freq)
+# mod_freq =  [ my_list.count(i) for i in my_list ]
+# print(mod_freq)
 # z = zip (my_list, mod_freq)
 # # print(tuple(z))
 # # The dictionary will only retain the last occurrence of each key. 
@@ -584,7 +584,7 @@ print(mod_freq)
 
 # fun(str1, str2)
 
-# Ques 22 Find a missing number/elemnt in an array ?
+# Ques 22 Find a missing number/element in an array ?
 # Sol 22.
 
 # def find_missing_number(arr):
@@ -609,11 +609,29 @@ print(mod_freq)
 # Ques 23. To find the occurance of word in a list ?
 # Sol 23.
 
-# list=["mon", "tues", "wed", "sun", "fri", "sat", "sun", "mon", "sat", "sun"]
+list_demo=["mon", "tues", "wed", "sun", "fri", "sat", "sun", "mon", "sat", "sun"]
 # mod_list=list.count("sat")
 # mod_list_1=list.count("sun")
 # print(mod_list) # Freq of "sat" in the above list.
 # print(mod_list_1) # Freq of "sun" in the above list.
+
+# M1.... To calculate the count of each string in the list, you can use Python's built-in collections.
+# Counter class, which makes it very easy to count the occurrences of elements in a list.
+
+# from collections import Counter
+# count_dict = Counter(list_demo)
+# print(count_dict)
+
+# M2.... We can also use a dict to manually count the occurrences of each string.
+
+emp={}
+
+for day in list_demo:
+    if day in emp:
+        emp[day] += 1
+    else:
+        emp[day] = 1
+print(emp)
 
 # Ques 24. Calculate the count of vowels & consonants in the string ?
 # Sol 24.
