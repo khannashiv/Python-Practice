@@ -609,7 +609,7 @@
 # Ques 23. To find the occurance of word in a list ?
 # Sol 23.
 
-list_demo=["mon", "tues", "wed", "sun", "fri", "sat", "sun", "mon", "sat", "sun"]
+# list_demo=["mon", "tues", "wed", "sun", "fri", "sat", "sun", "mon", "sat", "sun"]
 # mod_list=list.count("sat")
 # mod_list_1=list.count("sun")
 # print(mod_list) # Freq of "sat" in the above list.
@@ -624,14 +624,14 @@ list_demo=["mon", "tues", "wed", "sun", "fri", "sat", "sun", "mon", "sat", "sun"
 
 # M2.... We can also use a dict to manually count the occurrences of each string.
 
-emp={}
+# emp={}
 
-for day in list_demo:
-    if day in emp:
-        emp[day] += 1
-    else:
-        emp[day] = 1
-print(emp)
+# for day in list_demo:
+#     if day in emp:
+#         emp[day] += 1
+#     else:
+#         emp[day] = 1
+# print(emp)
 
 # Ques 24. Calculate the count of vowels & consonants in the string ?
 # Sol 24.
