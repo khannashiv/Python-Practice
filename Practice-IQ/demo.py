@@ -425,6 +425,22 @@
 #         print(j+1, end='')
 #     print()
 
+### P5. Lower Pyramid with required pattern.
+
+# n=7
+# for i in range(n):
+#     for j in range(n-i):
+#         print(n-i,end='')
+#     print()
+
+### P6. Lower Pyramid with required pattern.
+
+# n=5
+# for i in range(n):
+#     for j in range(1, n-i+1):
+#         print(j, end='')
+#     print()
+
 ###########################################  
 
 # Ques : 14 :  To find if given year taken as input is leap year or not ?
@@ -493,24 +509,121 @@
 
 # Ques: 18 To find the least repeating character in the string ?
 # Sol 18. 
-my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
-my_list = list(my_str)
-print (my_list)
-freq = my_list.count('a')
-print(freq)
-mod_freq =  [ my_list.count(i) for i in my_list ]
-z = zip (my_list, mod_freq)
-# print(tuple(z))
-# The dictionary will only retain the last occurrence of each key. 
-# That’s because Python dictionaries are designed to have unique keys — any 
-# duplicate keys get overwritten during construction.
-dict_1 = dict(z)
-print(dict_1)
-print(dict_1.keys())
-print(dict_1.values())
-print(dict_1.items())
-print(min(dict_1, key = dict_1.get))    # Minimum value against a key.
-print(max(dict_1, key = dict_1.get))    # Maximum value against a key.
-print(dict_1['a'])                      # Check the occurance of particular key.
-print(dict_1['d'])
+# my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
+# my_list = list(my_str)
+# print (my_list)
+# freq = my_list.count('a')
+# print(freq)
+# mod_freq =  [ my_list.count(i) for i in my_list ]
+# z = zip (my_list, mod_freq)
+# # print(tuple(z))
+# # The dictionary will only retain the last occurrence of each key. 
+# # That’s because Python dictionaries are designed to have unique keys — any 
+# # duplicate keys get overwritten during construction.
+# dict_1 = dict(z)
+# print(dict_1)
+# print(dict_1.keys())
+# print(dict_1.values())
+# print(dict_1.items())
+# print(min(dict_1, key = dict_1.get))    # Minimum value against a key.
+# print(max(dict_1, key = dict_1.get))    # Maximum value against a key.
+# print(dict_1['a'])                      # Check the occurance of particular key.
+# print(dict_1['d'])
 
+# Ques : 19 You are given with string "S", suppose a character "c" occurs consecutively for x times in
+# string. Replace these consecutive occurance of the chracter "c" with (x,c)
+
+# Sol : 19
+
+# from itertools import groupby
+# for i,j in groupby ("Hello!!!"):
+#     print((len(tuple(j)), i), end='')
+
+# Ques: 20 Remove character from string.
+# Sol 20
+
+# my_str="Hello_Hi"
+# new_str=my_str.replace('H','')
+# print(new_str)
+
+# Ques: 21 Check if given strings are anagram or not ?
+# Sol : 21
+
+# M1. Method-1
+
+# str_1=input("Please enter your frist string. ")
+# str_2=input("please enter your second string. ")
+
+# mod_str_1=sorted(str_1)
+# print(mod_str_1)
+
+# mod_str_2=sorted(str_2)
+# print(mod_str_2)
+
+# if mod_str_1 == mod_str_2:
+#     print ("Given strings are anagram. ")
+# else:
+#     print("Given strings are not anagram. ")
+
+# M2. Method-2
+
+# def fun(str1, str2):
+#     mod_str_1=sorted(str1)
+#     mod_str_2=sorted(str2)
+#     if mod_str_1 == mod_str_2:
+#         print("Entered strings follows Anagram.")
+#     else:
+#         print("Given strings are not anagram.")
+
+# str1=input("Please enter your first string. ")
+# str2=input("Please enter your second string. ")
+
+# fun(str1, str2)
+
+# Ques 22 Find a missing number/elemnt in an array ?
+# Sol 22.
+
+# def find_missing_number(arr):
+#     # Step 1: Calculate n, the total number of elements including the missing one
+#     n = len(arr) + 1  # Length of the array is n-1, so we add 1 to get the full length
+
+#     # Step 2: Create a set of numbers from 1 to n (inclusive)
+#     full_set = set(range(1, n + 1))
+
+#     # Step 3: Convert the array into a set
+#     arr_set = set(arr)
+
+#     # Step 4: Find the missing number by subtracting the array set from the full set
+#     missing = full_set - arr_set
+
+#     # Step 5: Return the missing number (there should only be one element in the result)
+#     return missing.pop()
+
+# arr = [1, 2, 3, 5]
+# print(find_missing_number(arr))  # Output: 4
+
+# Ques 23. To find the occurance of word in a list ?
+# Sol 23.
+
+# list=["mon", "tues", "wed", "sun", "fri", "sat", "sun", "mon", "sat", "sun"]
+# mod_list=list.count("sat")
+# mod_list_1=list.count("sun")
+# print(mod_list) # Freq of "sat" in the above list.
+# print(mod_list_1) # Freq of "sun" in the above list.
+
+# Ques 24. Calculate the count of vowels & consonants in the string ?
+# Sol 24.
+dummy_str = "Hello how are you !! I'm learning python. "
+vowels = 0
+consonants = 0
+list_vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E','I', 'O', 'U']
+
+for char in dummy_str:
+    if char.isalpha():
+        if char in list_vowels:
+            vowels += 1
+        else:
+            consonants += 1
+
+print(consonants) # Output is : 18
+print(vowels)     # output is : 12
