@@ -24,10 +24,11 @@
 
 # my_list=[11, 12, 1, 7, 10]
 
+# # Bubble sort
 # for i in range(len(my_list)):
-#     for j in range(len(my_list)-1):
-#         if my_list[j] > my_list[i]:
-#            my_list[i],my_list[j] = my_list[j],my_list[i]
+#     for j in range(len(my_list) - 1 - i):                           # Reduce the range after each pass
+#         if my_list[j] > my_list[j + 1]:                             # Compare adjacent elements
+#             my_list[j + 1], my_list[j] = my_list[j], my_list[j + 1] # Swap if out of order
 
 # print(my_list)
 
@@ -35,7 +36,7 @@
 
 # my_list=[11, 12, 1, 7, 10]
 
-# sorted_list=sorted(my_list)
+# sorted_list = sorted(my_list)
 # print(sorted_list)
 
 # M2 || By initializing empty array || Sorting in Ascending order.
@@ -80,10 +81,11 @@
 # M2
 # my_list=[11, 12, 1, 7, 10]
 
+# # Bubble sort
 # for i in range(len(my_list)):
-#     for j in range(len(my_list)-1):
-#         if my_list[j] < my_list[i]:
-#             my_list[i],my_list[j] = my_list[j],my_list[i]
+#     for j in range(len(my_list) - 1 - i):                           # Reduce the range after each pass
+#         if my_list[j] < my_list[j + 1]:                             # Compare adjacent elements
+#             my_list[j + 1], my_list[j] = my_list[j], my_list[j + 1] # Swap if out of order
 
 # print(my_list)
 
@@ -150,23 +152,23 @@
 
 # Method 1 : Using for loop.
 
-# num=int(input("Please enter the number of your choice. "))
-# n1=0 # Meaning value of 1st element of series.
-# n2=1 # Meaning value of 2nd element in the series.
+# num=int(input("Please enter the number of your choice. ")) # num is the number of terms
+# n1=0 # First term in the Fibonacci series
+# n2=1 # Second term in the Fibonacci series
 
 # if num <= 0:
 #     print("Please enter the valid number. ")
 # elif num == 1:
-#     print(n1)
+#     print(n1)  # If only 1 term is requested, print the first term (0)
 # elif num == 2:
-#     print(n2)
+#     print(n2) # If 2 terms are requested, print the second term (1)
 # else:
-#     for i in range(num):
-#         total = n1 + n2
-#         n1=n2
-#         n2=total
-#         print(total) # To print entire fiboncaci series.
-#     # print(total) # To print last or final element of fibonacci series.
+#     for i in range(num):    # Loop runs 'num' times, generating the series
+#         total = n1 + n2     # Calculate the next term in the Fibonacci series
+#         n1=n2               # Update the first term to be the previous second term
+#         n2=total            # Update the second term to be the calculated total (next Fibonacci term)
+#         print(total)        # To print entire fiboncaci series.
+#     print(total)            # To print last or final element of fibonacci series.
 
 # Method 2 : Using while loop.
 
@@ -253,8 +255,8 @@
 
 # Method 1 & Condition 1.... Using inbuilt function. [ Reversing the string .]
 
-# my_str = "malayalam"  # Tesed with abcd, madam etc.
-# new_str = ""
+# my_str = "abcd"  # Tested with abcd, madam, malayalam etc.
+# emp_str = ""
 
 # new_str = my_str[::-1]
 # print(new_str)
@@ -263,12 +265,12 @@
 
 # for i in my_str:
 #     #print(i)
-#     new_str = i + new_str
-# print(new_str)
+#     emp_str = i + emp_str
+# print(emp_str)
 
 # Method 3 & Condition 3.....  Check if given string is pallindrome or not
 
-# if new_str == my_str:
+# if emp_str == my_str:
 #     print("The original string is pallindrome. ")
 # else:
 #     print("The original string is not pallindrome. ")
@@ -306,10 +308,10 @@
 
 # Sol 8 :
 
-# test_num=153
-# temp=test_num
-# sum=0
-# order= len(str(test_num))
+# test_num = 153
+# temp = test_num
+# sum = 0
+# order = len(str(test_num))
 
 # while test_num > 0:
 #     rem = test_num%10
@@ -349,27 +351,28 @@
 
 # Method 2 Without recursion.
 
+# num is the individual number for which the factorial will be calculated.
 # num = int(input("Please enter a number of your choice: "))
-# fact=1
+# fact = 1 # Initializing fact as 1, because the factorial of any number ends at 1.
 
 # if num < 0:
-#     print(" Please enter positive number.")
+#     print(" Please enter positive number.") # Factorial is not defined for negative numbers.
 # elif num == 0:
-#     print(1)
+#     print(1)                                # The factorial of 0 is defined as 1.
 # elif num == 1:
-#     print(1)
+#     print(1)                                # The factorial of 1 is 1.
 # else:
-#     for i in range(1, num+1):
-#         fact=fact*i
-#     print(fact)
+#     for i in range(1, num+1):          # Loop from 1 to num (inclusive)
+#         fact=fact*i                    # Multiply fact by i in each iteration to calculate the factorial.
+#     print(fact)                        # After the loop, print the final value of fact (i.e., the factorial of num).
 
 # Ques 10: How to calculate number of words in given sentence ?
 # Sol 10:
-# dummy_sent = "My name is Shiv. I'm playing Cricket. "
+dummy_sent = "My name is Shiv. I'm playing Cricket. "
 # print(len(dummy_sent))
 # print(dummy_sent.split())
 # print(dummy_sent.rstrip())
-# print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
+print(len(dummy_sent.split())) # Final solution : Use split function & eventually calculate length of it.
 
 # Ques 11: How to clear the list ?
 # Sol 11 :
@@ -477,7 +480,7 @@
 # max_zero_occurance = max(len(i) for i in str1.split('1'))
 # print(max_zero_occurance)
 
-# Ques: 17 Solve Fizz-Buzz Problem using conventional as well as via dictionary ?
+# Ques :17 Solve Fizz-Buzz Problem using conventional as well as via dictionary ?
 # Sol :17
 
 # M1 - Method 1
@@ -509,12 +512,13 @@
 
 # Ques: 18 To find the least repeating character in the string ?
 # Sol 18. 
-# my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
-# my_list = list(my_str)
+my_str="aaaaaaaaaaaabbbbbbbbbbcccccccdddd"
+my_list = list(my_str)
 # print (my_list)
 # freq = my_list.count('a')
 # print(freq)
-# mod_freq =  [ my_list.count(i) for i in my_list ]
+mod_freq =  [ my_list.count(i) for i in my_list ]
+print(mod_freq)
 # z = zip (my_list, mod_freq)
 # # print(tuple(z))
 # # The dictionary will only retain the last occurrence of each key. 
@@ -613,17 +617,18 @@
 
 # Ques 24. Calculate the count of vowels & consonants in the string ?
 # Sol 24.
-dummy_str = "Hello how are you !! I'm learning python. "
-vowels = 0
-consonants = 0
-list_vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E','I', 'O', 'U']
 
-for char in dummy_str:
-    if char.isalpha():
-        if char in list_vowels:
-            vowels += 1
-        else:
-            consonants += 1
+# dummy_str = "Hello how are you !! I'm learning python. "
+# vowels = 0
+# consonants = 0
+# list_vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E','I', 'O', 'U']
 
-print(consonants) # Output is : 18
-print(vowels)     # output is : 12
+# for char in dummy_str:
+#     if char.isalpha():
+#         if char in list_vowels:
+#             vowels += 1
+#         else:
+#             consonants += 1
+
+# print(consonants) # Output is : 18
+# print(vowels)     # output is : 12
