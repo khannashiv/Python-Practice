@@ -413,7 +413,7 @@ finally:
 
 # Solution:
 
-############ Method 1 ################################################### 
+############ Method 1 ###########################
 
 # def fun(param_1):
 #     return int(param_1)
@@ -428,3 +428,74 @@ finally:
 #     print("Exception has not raised.")
 # finally:
 #     print("This block will execute always.")
+
+
+################################### 
+
+## Way to check what are default or inbuilt errors & exceptions in python ?
+
+import builtins
+import inspect
+
+exceptions = []
+
+for name, obj in inspect.getmembers(builtins):
+    if inspect.isclass(obj) and issubclass(obj, BaseException):
+        exceptions.append(name)
+
+print(exceptions)
+
+### Meaning of above code .
+
+# What is the meaning of inspect.getmembers(builtins) ?
+
+    # inspect.getmembers() is a function that returns all the members of an object (like a module, class, or instance).
+        # Each member is a tuple containing:
+            # The member's name (a string)
+            # The member's value (the actual object)
+
+#    Specifically for builtins module:
+        # builtins contains all the built-in functions, classes, and variables that Python provides by default.
+        # Calling inspect.getmembers(builtins) returns a list of tuples for every attribute in the builtins module.
+
+# inspect.isclass(obj)
+
+    # This checks whether obj is a class (i.e., a class object) in Python.
+
+    # Returns:
+        # True if obj is a class.
+        # False otherwise.
+
+        # For Example :
+
+            # import inspect
+            # print(inspect.isclass(int))        # True, because int is a class
+            # print(inspect.isclass(123))        # False, 123 is an int instance, not a class
+            # print(inspect.isclass("hello"))    # False, string instance, not a class
+
+
+# issubclass(obj, BaseException)
+
+        # This checks whether obj is a subclass of BaseException.
+
+        # BaseException is the base class for all built-in exceptions in Python.
+
+            # Returns:
+                # True if obj is a subclass (direct or indirect) of BaseException.
+                # False otherwise.
+
+
+        #   For Example :
+        #     print(issubclass(ValueError, BaseException))   # True, ValueError inherits from BaseException
+        #     print(issubclass(int, BaseException))          # False, int is not related to exceptions
+
+        # Why use them together?
+            # if inspect.isclass(obj) and issubclass(obj, BaseException):
+
+                # First, check if obj is a class to avoid errors (because issubclass() requires a class as the first argument).
+                # Then, check if that class inherits from BaseException (meaning it is some kind of exception).
+                # This combination filters out all exception classes from the built-ins.
+
+
+#  Refrence Docs :
+#  https://docs.python.org/3/library/exceptions.html
