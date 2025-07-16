@@ -1,6 +1,40 @@
 ################## Exception handling in python ############
 
-# Example 1. FileNotFound
+# NOTE : Always put exception name or alias against the exception if we are not not sure what exception 
+# will be raised by the code, don't use except block directly i.e. 
+# ( except : or except Exception:) since writting will capture all the exceptions defined under exception exception class.
+ 
+# Ques : except: vs except Exception:
+# Sol : 
+
+# ✅ except Exception: – Recommended in most cases:
+
+    # It catches most exceptions you'd want to handle:
+        # ValueError, AssertionError, ZeroDivisionError, etc.
+
+            # But excludes system-level exceptions like:
+                # KeyboardInterrupt (Ctrl+C)
+                # SystemExit (e.g., from sys.exit())
+                # GeneratorExit
+
+# ✅ This means your program will still properly exit or respond to user interrupts and shutdowns.
+
+# ⚠️ except: – Catches everything (not always good)
+    # It catches everything, including:
+        # SystemExit
+        # KeyboardInterrupt
+        # Other non-Exception-derived errors
+
+# This can make your program:
+        # Unintentionally swallow interrupts (e.g., Ctrl+C won’t work)
+        # Fail silently or hang when it should stop
+
+#  Best practice: If we're not sure about the exact error, it's better to catch Exception with an alias (e.g., except Exception as e:),
+#  so you can still inspect or log the actual error.
+
+######## ***************************************************************************************
+
+# Example 1. FileNotFound ********
 
 # Problem : Sample Code which will throw an exception / error i.e. FileNotFoundError
 
@@ -12,23 +46,25 @@
 
 # Method 1.
 
-# try:
-#     # file = open("./iq.py", "r")  # Working scenario where file exist
-#     file =open("a.txt", "r")       # Non working scenario, file does not exist and  will throw an error.
-#     content = file.read()
-#     print(content)
-# # except :                         # Working .
-# except FileNotFoundError:          # Also working .
-#     # This block runs if an error occurs in the try block
-#     print("Check if the given file exists or not.")
-# else:
-#     # This block runs if no exception was raised in the try block
-#     print(" File found !!")
-#     file.close()                               # Closing the file after reading it.
-#     print("closing the file now.") 
-# finally:
-#      # This block runs always, whether an exception was raised or not.
-#     print("Finally will get executed always.")
+try:
+    # file = open("./iq.py", "r")  # Working scenario where file exist
+    file =open("a.txt", "r")       # Non working scenario, file does not exist and  will throw an error.
+    content = file.read()
+    print(content)
+# except :                                      # Working .
+# except FileNotFoundError:                     # Also working .
+    # This block runs if an error occurs in the try block
+    # print("Check if the given file exists or not.")
+except  FileNotFoundError as ex:                # Also working with any alias where we alias will point out to exact error message.
+    print(f'Exception caught!! {ex}')
+else:
+    # This block runs if no exception was raised in the try block
+    print(" File found !!")
+    file.close()                               # Closing the file after reading it.
+    print("closing the file now.") 
+finally:
+     # This block runs always, whether an exception was raised or not.
+    print("Finally will get executed always.")
 
 # Method 2.
 
@@ -45,7 +81,7 @@
 
 ####################################################################################
 
-# Example 2. 
+# Example 2. NameError ******8
 
 # Problem : Sample Code which will throw an exception / error i.e. NameError
 
@@ -61,9 +97,11 @@
 #         print("Given number is even number.")
 #     else:
 #         print("Given number is odd in nature.")
-# # except:                                               # working.
-# except NameError:                                       # working.
-#     print("If 'num' not defined in that case exception is raised ")
+# # # except:                                                           # working.
+# # except NameError:                                                   # working.
+# #     print("If 'num' not defined in that case exception is raised ")
+# except NameError as abc:                                              # working.
+#     print(f"Exception raised!! {abc}")
 # else:
 #     print("Logic to check odd / even is succesful.")
 # finally:
@@ -71,7 +109,7 @@
 
 ################################################################################# 
 
-# Example 3.
+# Example 3. ZeroDivisionError ****
 
 # Problem: Sample Code which will throw an exception / error i.e. ZeroDivisionError
 
@@ -200,26 +238,26 @@
 
 # Example 7: Multiple Custom Exceptions.
 
-class LowBalanceError(Exception):
-    pass
+# class LowBalanceError(Exception):
+#     pass
 
-class UnauthorizedAccessError(Exception):
-    pass
+# class UnauthorizedAccessError(Exception):
+#     pass
 
-balance = 201
+# balance = 201
 
-try:
-    if balance == 100:
-        raise UnauthorizedAccessError("Access denied.")
+# try:
+#     if balance == 100:
+#         raise UnauthorizedAccessError("Access denied.")
      
-    if balance < 200:
-        raise LowBalanceError("Not enough balance.")
+#     if balance < 200:
+#         raise LowBalanceError("Not enough balance.")
 
-except LowBalanceError as e:
-    print(f"Low Balance Error: {e}")
+# except LowBalanceError as e:
+#     print(f"Low Balance Error: {e}")
 
-except UnauthorizedAccessError as e:
-    print(f"Unauthorized Access Error: {e}")
+# except UnauthorizedAccessError as e:
+#     print(f"Unauthorized Access Error: {e}")
 
 ############################################333 
 
@@ -271,3 +309,122 @@ except UnauthorizedAccessError as e:
     # You can have multiple except blocks to handle different types of custom exceptions.
 
 ############################## 
+
+# Example 8: Assertion error/exception handling .
+
+# Problem: Sample Code which will throw an exception / error i.e. AssertionError
+
+# M0 : Following code will check what os you are working on. || General Check .
+
+# import platform
+
+# def osversion():
+#     print(platform.system().lower())
+#     current_os = platform.system().lower()
+#     print("Detected OS:", current_os)
+
+#     if current_os == "linux":
+#         print("True, if given OS is Linux.")
+#     elif current_os == "darwin":
+#         print("True, if given OS is macOS.")
+#     elif current_os == "windows":
+#         print("True, if given OS is Windows.")
+#     else:
+#         print("False, unrecognized OS.")
+
+# osversion()
+
+# M1 : Using which error/exception is being raised.
+
+# import os
+# import sys
+# import platform
+
+# print(platform.system().lower())
+# print(sys.platform)
+
+# def osversion():
+#     assert("linux" in sys.platform)
+#     print("True, if given OS is linux.")
+
+# osversion()
+
+# Solution:
+
+############ Method 1 ################################################### 
+
+# assert condition, "Optional error message"
+        # If condition is True: nothing happens, the program continues.
+        # If condition is False: it raises an AssertionError.
+
+# import platform
+# import sys
+
+# def OScheck():
+#     print(sys.platform)                                     # Kept for debugging purposes.
+#     print(platform.system().lower())
+#     # assert("win32" in sys.platform)                       # Working Scenario
+#     # print("True, OS working on is based on windows. ")
+#     assert("linux" in sys.platform)                         # Non working scenario ( to raise exception )
+#     print("True, OS working on is based on linux. ")
+# try:
+#     OScheck()
+# except AssertionError:
+#     print(f"Assertion error has occured,exception/error caught here!!")
+# else:
+#     print("No Exception occured!!")
+# finally:
+#     print("This block will execute always.")
+
+############ Method 2 ##################################### 
+
+
+# import platform
+# import sys
+
+# def OScheck():
+#     print("sys.platform:", sys.platform)                    # Kept only for debugging.
+#     print("platform.system():", platform.system().lower())  # Kept only for debugging.
+
+#     # Assert Linux only — will raise AssertionError if not
+#     assert "linux" in sys.platform.lower(), "Non-Linux OS detected!"
+
+#     print("True, OS is based on Linux.")
+
+# try:
+#     OScheck()
+# except AssertionError as ae:
+#     print("AssertionError occurred:", ae)
+# except Exception as e:
+#     print("Some unexpected error occurred:", e)
+# else:
+#     print("No exception occurred.")
+# finally:
+#     print("This block always executes.")
+
+# Example 9: Value error/exception handling .
+
+# Problem: Sample Code which will throw an exception / error i.e. ValueError: invalid literal for int() with base 10: 'abc'
+
+# def fun(param_1):
+#     return int(param_1)
+
+# fun("abc")
+
+# Solution:
+
+############ Method 1 ################################################### 
+
+# def fun(param_1):
+#     return int(param_1)
+
+# try:
+#     fun("abc")
+# # except ValueError:
+# #     print("Exception handled successfully!!")
+# except ValueError as e:
+#     print(f"Exception handled successfully: {e}")
+# else:
+#     print("Exception has not raised.")
+# finally:
+#     print("This block will execute always.")
