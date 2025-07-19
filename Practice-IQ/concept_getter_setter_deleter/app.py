@@ -13,7 +13,7 @@ class person():
     # Setter for name attribute.
     @name.setter
     def name(self, value):
-        if len(value) > 1:
+        if len(value) > 2:
             self._name = value
         else:
             raise ValueError("Name must has atleast 2 characters.")
