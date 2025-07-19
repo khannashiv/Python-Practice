@@ -31,9 +31,9 @@ class Book():
 
 class library():
     def __init__(self):
-        self.books =  []            #  A list to store all books in the library
+        self.books =  []             #  A list to store all books in the library
 
-    def add_book(self, book):
+    def add_book(self, book):        # Here book parameter is just a placeholder.
         self.books.append(book)      # Add a new book to the library
 
     def list_books(self):
@@ -113,3 +113,9 @@ if __name__ == "__main__":
 
         # Passing an instance: Here in this code, we're passing instances of the book class (like book_1) to add_book, 
         # which the library can then store.
+
+        # You do not need to change the parameter name (book) in the add_book method if you change the class 
+        # name from book to Book.
+
+        # The parameter book in add_book will still work as it is, 
+        # because it’s just a name referring to the instance of the Book class passed to the method.
