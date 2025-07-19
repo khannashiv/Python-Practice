@@ -94,15 +94,15 @@ if __name__ == "__main__":
 
     # Doing exception handling for modified peropertied of an object.
     try:
-        emp_1.name="A"
-    except ValueError as v:
-        print(f"We need minimum 2 characters for employee name: {v}")
-
-    try:
-        emp_2.salary <= 0
-    except ValueError as v1:
-        print(f"Salary of an employee must be +ve: {v1}")
+        emp_1.name = "A"  # Invalid name (less than 2 characters)
+    except ValueError as e:
+        print(f"Error: {e}")
         
+    try:
+        emp_2.salary = -5000  # Invalid salary (negative value)
+    except ValueError as e:
+        print(f"Error: {e}")
+
     finally:
         print("This block will execute for sure.")
 
