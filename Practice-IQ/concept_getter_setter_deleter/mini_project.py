@@ -87,6 +87,20 @@ if __name__ == "__main__":
     emp_2.salary = 2000
     emp_2.display()
 
+    # Doing exception handling for modified peropertied of an object.
+    try:
+        emp_1.name="A"
+    except ValueError as v:
+        print(f"We need minimum 2 characters for employee name: {v}")
+
+    try:
+        emp_2.salary <= 0
+    except ValueError as v1:
+        print(f"Salary of an employee must be +ve: {v1}")
+        
+    finally:
+        print("This block will execute for sure.")
+
     # Deleting the properties of both objects via deleters.
     del emp_1.name
     del emp_1.age
