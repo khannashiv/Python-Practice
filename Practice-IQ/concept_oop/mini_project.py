@@ -103,6 +103,7 @@ if __name__ == "__main__":
     # user_1.return_book(my_lib, "Python")
 
     # User_2 issuing and returning books
+    user_2.issue_book(my_lib, "C++")
     user_2.issue_book(my_lib, "Python")
 
     # List available books again after issuing/returning
