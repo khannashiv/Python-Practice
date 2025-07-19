@@ -29,8 +29,7 @@
 
 <!-- 
 
-In this Hands-On:
-
+In this Hands-On : Where we have code related to app.py
 
 @property:
 
