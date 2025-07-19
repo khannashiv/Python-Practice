@@ -24,7 +24,8 @@ class employee():
             self._name = value
         else:
             raise ValueError ("Name of the employee must has atleast 2 characters.")
-
+        
+    # Deleter for name attribute.
     @name.deleter
     def name(self):
         print ("Deleting name...")
@@ -35,13 +36,15 @@ class employee():
     def age(self):
         return self._age
     
+    # Setter for age attribute.
     @age.setter
     def age(self, value):
         if value > 0:
             self._age = value
         else:
             raise ValueError ("Age should be a positive number.")
-        
+    
+     # Deleter for age attribute.
     @age.deleter
     def age(self):
         print("Deleting age...")
@@ -52,6 +55,7 @@ class employee():
     def salary(self):
         return self._salary
     
+    # Setter for salary attribute.
     @salary.setter
     def salary(self, value):
         if value > 0:
@@ -59,6 +63,7 @@ class employee():
         else:
             raise ValueError ("Salary received by an employee must be +ve")
 
+    # Deleter for salary attribute.
     @salary.deleter
     def salary(self):
         print("Deleting salary...")
