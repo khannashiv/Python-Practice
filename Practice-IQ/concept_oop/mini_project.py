@@ -25,13 +25,13 @@ class book():
         self.is_issued = False # Assume initially no book is issued.
 
     def __str__(self):
-        return f"Title: {self.title}, Author: {self.author}, ISBN:{self.isbn}"
+        return f"Title: {self.title}, Author: {self.author}, ISBN: {self.isbn}"
     
 # Define the Library class to manage a collection of books
 
 class library():
     def __init__(self):
-        self.books =  []            # A list to store all books in the library
+        self.books =  []            #  A list to store all books in the library
 
     def add_book(self, book):
         self.books.append(book)      # Add a new book to the library
