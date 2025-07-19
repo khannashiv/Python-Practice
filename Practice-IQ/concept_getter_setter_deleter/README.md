@@ -27,6 +27,25 @@
         A deleter is a method that is used to delete an attribute. This gives you control over what happens when an attribute is deleted, such as releasing resources or logging the deletion.
  -->
 
+<!-- 
+
+In this Hands-On:
+
+
+@property:
+
+    This decorator turns the method into a getter. When you access person.name, Python automatically calls the name() method and returns the value of self._name.
+
+@name.setter:
+
+    This decorator turns the method into a setter. When you assign person.name = "Bob", Python automatically calls the name() setter method and assigns the value to self._name. We also validate that the name is at least 2 characters long.
+
+@name.deleter:
+
+    This decorator turns the method into a deleter. When you call del person.name, the name() deleter method is called. You can include any cleanup code in the deleter, like logging the deletion or releasing resources.
+
+ -->
+
  <!-- 
  
  Ques : Why Do We Need to Define del self._name and del self._age in the Deleter?
@@ -42,5 +61,5 @@
         - Deleting the property itself (like del person.name) doesn't automatically delete the underlying attribute (_name or _age).
 
         - The deleter method only triggers when you call del person.name or del person.age, but it needs explicit instructions inside the method to delete the actual object data that the property is managing.
- 
+    
   -->

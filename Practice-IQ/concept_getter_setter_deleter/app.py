@@ -14,7 +14,7 @@ class person():
     @name.setter
     def name(self, value):
         if len(value) > 1:
-            self._name=value
+            self._name = value
         else:
             raise ValueError("Name must has atleast 2 characters.")
 
@@ -26,7 +26,7 @@ class person():
     # Setter for age attribute.
     @age.setter
     def age(self, value):
-        if value >=0:
+        if value >= 0:
             self._age = value
         else:
             raise ValueError("Age cannot be -ve.")
@@ -55,7 +55,7 @@ print(person.name)
 
 # Modifying the properties via setters
 
-person.name = "Bob"
+person.name = "Nick"
 person.age = 20
 
 # Accessing the properties again after modifying the values via setter.
