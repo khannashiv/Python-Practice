@@ -17,7 +17,7 @@
         # Library Class:  To manage the collection of books and actions like adding, issuing, and returning books.
         # User Class   :  To represent a user who can issue and return books.
 
-class book():
+class Book():
     def __init__(self, title, author, isbn):
         self.title     = title
         self.author    = author
@@ -38,7 +38,7 @@ class library():
 
     def list_books(self):
         # List all books that are available (not issued)
-        available_books = [ book for book in self.books if not book.is_issued]
+        available_books = [ book for book in self.books if not book.is_issued ]
         if available_books:
             print("Available books: ")
             for book in available_books:
@@ -80,9 +80,9 @@ class user:
 if __name__ == "__main__":
 
     # Add book objects (instances) to the library
-    book_1 = book("Python", "Author-1", 1234)
-    book_2 = book("C++", "Author-2", 5678)
-    book_3 = book("Terraform Basics", "Author-3", 9012)
+    book_1 = Book("Python", "Author-1", 1234)
+    book_2 = Book("C++", "Author-2", 5678)
+    book_3 = Book("Terraform Basics", "Author-3", 9012)
 
     # Create a library instance
     my_lib = library()
@@ -108,3 +108,8 @@ if __name__ == "__main__":
 
     # List available books again after issuing/returning
     my_lib.list_books()
+
+    # Points to note.
+
+        # Passing an instance: Here in this code, we're passing instances of the book class (like book_1) to add_book, 
+        # which the library can then store.
