@@ -36,7 +36,7 @@ Case 2 :
 
         -- It only runs the function add(2, 3) that was called directly from main_example.py.
 
-Key Takeaways:
+ ** Key Takeaways ** :
 
     When you run module_example.py directly:
 
@@ -45,5 +45,5 @@ Key Takeaways:
     When you run main_example.py and import module_example.py:
 
         The __name__ variable in module_example.py is set to "module_example", so the code inside the if __name__ == "__main__": block does not execute. Instead, only the functions and variables that are explicitly imported and called (like add(2, 3)) are executed.
-        
+
  -->
