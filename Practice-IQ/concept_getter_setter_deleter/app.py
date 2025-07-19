@@ -45,11 +45,9 @@ class person():
         del self._age  # Deleting the actual internal attribute
 
 # Creating an object of class.
-
 person = person("Shiv", 30)
 
 # Accessing the properties via getters
-
 print(person.age)
 print(person.name)
 

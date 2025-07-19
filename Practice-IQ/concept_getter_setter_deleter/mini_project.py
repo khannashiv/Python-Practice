@@ -63,36 +63,39 @@ class employee():
     def salary(self):
         print("Deleting salary...")
         del self._salary
+
+    # Displaying the details of employee.
+    def display(self):
+        print(f"Employee name is: {self._name}, Employee age is: {self._age}, Employee monthly salary is: {self._salary}")
     
-employee_1 = employee("Shiv", 30, 5000)
-employee_2 = employee("Divi", 3, 1000)
 
-# Accessing the properties via getters
-print(employee_1.name)
-print(employee_1.age)
-print(employee_1.salary)
+if __name__ == "__main__":
 
-# Modifying the properties via setters
-employee_1.name = "Nick"
-print(employee_1.name)
+    # Creating objects for a class.
+    emp_1 = employee("Shiv", 30, 1000)
+    emp_2 = employee("Divi", 1, 11000)
 
-employee_1.age = 22
-print(employee_1.age)
+    # Accessing the properties via getters
+    emp_1.display()
+    emp_2.display()
 
-employee_1.salary = 1100
-print(employee_1.salary)
+    # Modifying the properties of object-1 i.e.emp_1 via setters
+    emp_1.name = "John"
+    emp_1.display()
 
-# Deleting the properties via deleters.
-del employee_1.name
-del employee_1.age
-del employee_1.salary
+    # Modifying the properties of object-2 i.e. emp_2 via setters
+    emp_2.salary = 2000
+    emp_2.display()
 
-# Checking the object after deletion
-print(employee_1.__dict__) 
+    # Deleting the properties of both objects via deleters.
+    del emp_1.name
+    del emp_1.age
+    del emp_1.salary
 
-# print(employee_2.name)
-# print(employee_2.age)
-# print(employee_2.salary)
+    del emp_2.name
+    del emp_2.age
+    del emp_2.salary
 
-
-    
+    # Checking the object after deletion
+    print(emp_1.__dict__) 
+    print(emp_2.__dict__) 
