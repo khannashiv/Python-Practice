@@ -4,7 +4,7 @@ def my_dec(func):
     def wrapper():
         print("Something to perform before actual function.")
         func()
-        print("Something to perform after this function.")
+        print("Something to perform after actual function.")
     return wrapper
 
 
