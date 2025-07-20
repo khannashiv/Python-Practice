@@ -18,7 +18,7 @@ class Employee(ABC):
         self._salary       = salary  # Encapsulated (private) attribute
 
     @abstractmethod
-    def calculate_salary():
+    def calculate_salary(self):
         pass
 
     # Getter for name (Encapsulation)
@@ -80,7 +80,7 @@ class PartTimeEmployee(Employee):
         print(f"Employee hourly wage: {self._hourly_wage}")
         print(f"Number of hours employee worked: {self._hours_worked}")
         print(f"Emplyee total salary: {self.calculate_salary()}")
-
+print("\n")
 FTE_1 = FullTimeEmployee("Shiv", "123", 1000, 100)
 FTE_1.display_info()
 
