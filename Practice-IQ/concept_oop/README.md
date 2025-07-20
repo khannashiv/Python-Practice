@@ -1,30 +1,30 @@
 #### Concepts of Object-Oriented Programming (OOP) ####
 
 **Class:**  
-A blueprint for creating objects. It defines attributes (data) and methods (functions) that describe the behavior and state of its objects.
+- A blueprint for creating objects. It defines attributes (data) and methods (functions) that describe the behavior and state of its objects.
 
 **Object:**  
-An instance of a class. Objects hold real data and can perform actions defined by their class.
+- An instance of a class. Objects hold real data and can perform actions defined by their class.
 
 **Methods:**  
-Functions defined inside a class that operate on its data and define the behavior of objects.
+- Functions defined inside a class that operate on its data and define the behavior of objects.
 
 **Inheritance:**  
-A mechanism for creating new classes from existing ones. The new (derived) class inherits attributes and methods from the base class, enabling code reuse and extension.
+- A mechanism for creating new classes from existing ones. The new (derived) class inherits attributes and methods from the base class, enabling code reuse and extension.
 
 **Encapsulation:**  
-The practice of restricting direct access to some of an object's attributes and methods. This is achieved using access modifiers (public, protected, private) and getter/setter methods to control how data is accessed or modified.
+- The practice of restricting direct access to some of an object's attributes and methods. This is achieved using access modifiers (public, protected, private) and getter/setter methods to control how data is accessed or modified.
 
 **Abstraction:**  
-Hiding complex implementation details and showing only the necessary features of an object. Abstract classes and methods define interfaces that must be implemented by derived classes.
+- Hiding complex implementation details and showing only the necessary features of an object. Abstract classes and methods define interfaces that must be implemented by derived classes.
 
 **Polymorphism:**  
-The ability to use a unified interface for different data types. Methods can be overridden or overloaded to provide specific behavior in derived classes.
+- The ability to use a unified interface for different data types. Methods can be overridden or overloaded to provide specific behavior in derived classes.
 
 ---
 
 **Variables:**  
-Named references to data.
+- Named references to data.
 
 **Attributes / Data Members:**  
 Variables associated with a class.  
@@ -32,14 +32,14 @@ Variables associated with a class.
 - **Class Variables:** Shared across all instances of the class.
 
 **Arguments:**  
-Values passed to a function when it is called.
+- Values passed to a function when it is called.
 
 **Parameters:**  
-Variables in the function definition that receive the argument values.
+- Variables in the function definition that receive the argument values.
 
 **Local Variables:**  
 **Local Variables:**  
-Variables declared within a function. They exist only during the function’s execution and are inaccessible outside that function’s scope.
+- Variables declared within a function. They exist only during the function’s execution and are inaccessible outside that function’s scope.
 
 ---
 
