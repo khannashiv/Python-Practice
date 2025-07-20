@@ -10,7 +10,7 @@
     # Example:
 
 x = 10          # 'x' is a variable
-name = "Alice"  # 'name' is a variable
+name = "Shiv"  # 'name' is a variable
 
 # 2. Data Members (or Attributes)
 
