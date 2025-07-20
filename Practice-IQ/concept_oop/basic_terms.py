@@ -1,5 +1,8 @@
 ## Different names or terms we use to refer to variables based on their context in Python.
 
+    # Data member = instance variable = object variable = Attribute of an object in OOP
+    # Member functions = Methods in OOP = Functions defined inside a class
+
 # 1. Variables (General term)
 
     # Definition: The most generic term for any named reference to a value stored in memory.
