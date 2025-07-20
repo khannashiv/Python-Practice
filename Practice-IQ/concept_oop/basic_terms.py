@@ -92,6 +92,20 @@ class Car:
 car1 = Car("Toyota", "Corolla")
 print(car1.make)                       # Accessing an instance variable
 
+################ Test-1 ########################
+
+# self.var_1 and self.var_2 are instance variables (or data members) of the Car class.
+# make and model are parameters in the __init__ method.They are just placeholders that receive values when an object of the class is created.
+# These parameters are used to initialize the data members (instance variables).
+# 
+class Car:
+    def __init__(self, make, model):
+        self.var_1 = make              
+        self.var_2 = model           
+
+car1 = Car("Toyota", "Corolla")        # Create an object of Car, passing "Toyota" and "Corolla"
+print(car1.var_1)                      # Access the 'var_1' attribute of car1, which is "Toyota"
+
 # 7. Class Variables
 
     # Definition: These are variables that are shared among all instances of a class. 
@@ -104,3 +118,4 @@ class Car:
 car1 = Car()
 car2 = Car()
 print(car1.wheels)      # Accessing class variable
+
