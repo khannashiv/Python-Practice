@@ -57,8 +57,8 @@ class FullTimeEmployee(Employee):
         self._bonus = bonus
 
     def calculate_salary(self):
-        # return self.get_salary() + self._bonus
-        return self._bonus + self._salary
+        # return self.get_salary() + self._bonus            # Wokring .
+        return self._bonus + self._salary                   # Working.
     
     def display_info(self):
         super().display_info()
@@ -133,3 +133,48 @@ PTE_1.display_info()
                     #     @abstractmethod
                     #     def calculate_salary(self):
                     #         pass
+
+# More Points to note.
+
+    # ABC: This stands for Abstract Base Class. It’s a module that helps in creating abstract classes in Python.
+    # abstractmethod: This is a decorator used to define a method that must be implemented by any subclass.
+    # Employee class is abstract, which means it cannot be instantiated directly. 
+        # This means you cannot create an object of that class on its own.
+        # It's a blueprint for other employee classes (like FullTimeEmployee and PartTimeEmployee).
+        # It inherits from ABC to become an abstract class.
+        # An abstract class is a class that contains one or more abstract methods.
+        # An abstract method is a method that does not have an implementation in the abstract class itself, but it must be implemented by any non-abstract class that inherits from it.
+        # Abstract classes are used to define common interfaces or behavior, but they are not intended to be instantiated directly.
+
+
+    # Constructor (__init__):
+        # Attributes (_name, _employee_id, _salary): These are encapsulated or private attributes.
+        # The underscore (_) is just a convention to indicate they are "private" and should not be accessed directly.
+        # The __init__ method is the constructor, which initializes these attributes when an object is created.
+
+    # Abstract Method calculate_salary():
+        # The @abstractmethod decorator marks this method as abstract, meaning any class that inherits from Employee must implement this method.
+        # pass means that the method doesn't have any implementation in the Employee class; it must be defined in the derived classes (FullTimeEmployee, PartTimeEmployee).
+
+    #  Encapsulation: Getter and Setter Methods:
+        # For each attribute (name, employee ID, salary), there are getter and setter methods that allow access and modification of these attributes while keeping them "private".
+        # These getter and setter methods allow:
+            # Getters: To retrieve the value of the attribute.
+            # Setters: To set or modify the value of the attribute.
+
+    # FullTimeEmployee Class (Derived Class): This class inherits from Employee, making it a subclass. It is a concrete class that implements the abstract method calculate_salary().
+        # Constructor (__init__):
+            # super().__init__(name, employee_id, salary): This line calls the parent class's constructor to initialize the common attributes (name, employee ID, salary).
+            # self._bonus = bonus: This initializes the bonus attribute for full-time employees.
+            # Overriding calculate_salary():
+                # This method is overridden from the abstract calculate_salary() method in the base class Employee.
+                # It calculates the total salary for full-time employees by adding the bonus to the base salary.
+
+    # Inherited Methods:
+            # If a method is defined in the base class, the derived class automatically inherits it.
+            # You can call that inherited method using self.method_name() in the derived class.
+
+    # Inherited Attributes:
+        # Similarly, any data member (attribute) defined in the base class can be accessed by the derived class using self.attribute_name.
+                        
+

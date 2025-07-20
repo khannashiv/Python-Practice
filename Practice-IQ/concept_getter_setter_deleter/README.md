@@ -47,7 +47,7 @@ In this Hands-On : Where we have code related to app.py
 
  <!-- 
  
- Ques : Why Do We Need to Define del self._name and del self._age in the Deleter?
+ Ques : Why do we need to define del self._name and del self._age in the Deleter?
 
  Sol : 
 
@@ -62,3 +62,87 @@ In this Hands-On : Where we have code related to app.py
         - The deleter method only triggers when you call del person.name or del person.age, but it needs explicit instructions inside the method to delete the actual object data that the property is managing.
     
   -->
+
+  <!-- 
+    Methods by which we can define getter & setter .
+
+    Method-1 
+
+        Explicit Getter and Setter Methods (the "manual" way):
+
+            - This is the traditional approach where you define separate methods for getting and setting the values of attributes.
+
+            - It’s simple, clear, and effective, especially when you don't need additional logic like validation, calculation, or dynamic behavior.
+  
+            class Employee:
+                def __init__(self, name, employee_id, salary):
+                    self._name = name
+                    self._employee_id = employee_id
+                    self._salary = salary
+
+                def get_name(self):
+                    return self._name
+
+                def set_name(self, name):
+                    self._name = name
+
+                def get_employee_id(self):
+                    return self._employee_id
+
+                def set_employee_id(self, employee_id):
+                    self._employee_id = employee_id
+
+                def get_salary(self):
+                    return self._salary
+
+                def set_salary(self, salary):
+                    self._salary = salary
+
+
+            emp = Employee("Divi", "123", 50000)
+            print(emp.get_name())  # Access via getter
+            emp.set_name("Shiv")    # Modify via setter
+
+    Method-2 
+
+        Using @property Decorator (the "Pythonic" way):
+
+            - The @property decorator allows you to access methods like attributes while still having the flexibility of a method behind the scenes.
+
+            - This is often seen as the more Pythonic way to define getters and setters because it keeps the code concise and clean while still allowing for additional logic or validation if needed.
+
+                class Employee:
+                    def __init__(self, name, employee_id, salary):
+                        self._name = name
+                        self._employee_id = employee_id
+                        self._salary = salary
+
+                    @property
+                    def name(self):
+                        return self._name
+
+                    @name.setter
+                    def name(self, value):
+                        self._name = value
+
+                    @property
+                    def employee_id(self):
+                        return self._employee_id
+
+                    @employee_id.setter
+                    def employee_id(self, value):
+                        self._employee_id = value
+
+                    @property
+                    def salary(self):
+                        return self._salary
+
+                    @salary.setter
+                    def salary(self, value):
+                        self._salary = value
+
+                emp = Employee("Divi", "123", 50000)
+                print(emp.name)     # Access via property (getter)
+                emp.name = "Shiv"  # Modify via setter
+
+   -->
