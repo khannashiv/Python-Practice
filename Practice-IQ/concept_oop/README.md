@@ -38,9 +38,18 @@ Values passed to a function when it is called.
 Variables in the function definition that receive the argument values.
 
 **Local Variables:**  
-Variables defined inside a function, limited to that function’s scope.
+**Local Variables:**  
+Variables declared within a function. They exist only during the function’s execution and are inaccessible outside that function’s scope.
 
 ---
+
+| Feature             | Single Underscore (`_`)                                                                                 | Double Underscore (`__`)                                                                           |
+|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Intended Access** | Protected (suggests limited access; intended for internal use, but still accessible)                    | Private (intended to be private to the class; uses name mangling for added protection)             |
+| **Name Mangling**   | No name mangling—can be accessed directly from outside                                                  | Yes, name mangling occurs, making direct access from outside more difficult                        |
+| **Accessibility**   | Accessible from outside the class                                                                       | Not directly accessible; can be accessed only via name mangling                                    |
+| **Use Case**        | Signals to developers that the variable/method is for internal use and should not be accessed directly  | Prevents accidental access or overriding; enforces stronger encapsulation                          |
+
 
 <!-- 
 
