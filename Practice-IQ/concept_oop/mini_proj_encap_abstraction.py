@@ -79,13 +79,12 @@ class PartTimeEmployee(Employee):
         super().display_info()
         print(f"Employee hourly wage: {self._hourly_wage}")
         print(f"Number of hours employee worked: {self._hours_worked}")
-        print(f"Emplyee total salary: {self.calculate_salary()}")
+        print(f"Employee total salary: {self.calculate_salary()}")
 
-print("\n")
+print("\nFull-Time Employee Info:")
 FTE_1 = FullTimeEmployee("Shiv", "123", 1000, 100)
 FTE_1.display_info()
 
-print(f"\nPrinting the wages for part time employee: ")
-
+print(f"\nPrinting the wages for part-time employee: ")
 PTE_1 = PartTimeEmployee("Divi", "456", 200, 20)
 PTE_1.display_info()
