@@ -9,12 +9,15 @@
 
 # Abstract class for Employee (Abstraction)
 
-class Employee():
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
     def __init__(self, name, employee_id, salary):
         self._name         = name    # Encapsulated (private) attribute
         self._employee_id  = employee_id
         self._salary       = salary  # Encapsulated (private) attribute
 
+    @abstractmethod
     def calculate_salary():
         pass
 
@@ -23,24 +26,24 @@ class Employee():
         return self._name
     
     # Setter for name (Encapsulation)
-    def set_name(self):
-        return self._name
+    def set_name(self, name):
+         self._name = name
     
     # Getter for employee_id (Encapsulation)
     def get_employee_id(self):
         return self._employee_id
     
     # Setter for employee_id (Encapsulation)
-    def set_employee_id(self):
-        return self._employee_id
+    def set_employee_id(self, employee_id):
+        self._employee_id = employee_id
     
     # Getter for salary (Encapsulation)
     def get_salary(self):
         return self._salary
     
     # Setter for salary (Encapsulation)
-    def set_salary(self):
-        return self._salary
+    def set_salary(self, salary):
+        self._salary = salary
     
     # Common method to display employee info.
     def display_info(self):
@@ -79,10 +82,9 @@ class PartTimeEmployee(Employee):
         print(f"Emplyee total salary: {self.calculate_salary()}")
 
 FTE_1 = FullTimeEmployee("Shiv", "123", 1000, 100)
-FTE_1.calculate_salary()
 FTE_1.display_info()
+
 print(f"\nPrinting the wages for part time employee: ")
 
 PTE_1 = PartTimeEmployee("Divi", "456", 200, 20)
-PTE_1.calculate_salary()
 PTE_1.display_info()
