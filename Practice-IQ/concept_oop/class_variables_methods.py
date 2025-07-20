@@ -24,6 +24,8 @@ obj_b.access_var(obj_a)
 
     # How can we access member functions of 1 class inside another class without using inheritance ?
 
+    # Method-1 >>>
+
 class A():
     def method_A(self):
         print(f"Hello from class A..!!")
@@ -34,5 +36,19 @@ class B():
         obj_aa.method_A()
         print(f"Hello from class B..!!") 
     
+obj_bb = B()
+obj_bb.method_B()
+
+    #  Method 2. >>>
+
+class A():
+    def method_A():
+        print(f"Hello from class A..!!")
+
+class B():
+    def method_B(self):
+        A.method_A()                # Call method_A directly using class name
+        print(f"Hello from class B..!!") 
+
 obj_bb = B()
 obj_bb.method_B()
