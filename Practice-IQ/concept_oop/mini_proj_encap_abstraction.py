@@ -88,3 +88,47 @@ FTE_1.display_info()
 print(f"\nPrinting the wages for part-time employee: ")
 PTE_1 = PartTimeEmployee("Divi", "456", 200, 20)
 PTE_1.display_info()
+
+# Explanation of Concepts:
+
+    # 1. Encapsulation:
+
+        # Encapsulation refers to the practice of restricting direct access to some of an object's attributes and methods.
+        # In the Employee class, we’ve made the attributes (_name, _employee_id, _salary) private by prefixing them with an underscore (_), which is a convention indicating they should not be accessed directly from outside the class.
+        # Instead, we provide getter and setter methods to get and modify the private attributes. This allows us to control the access and modification of the attributes.
+
+            # Example:
+                #  Getter and Setter methods:
+                    # def get_name(self):
+                    #     return self._name
+
+                    # def set_name(self, name):
+                    #     self._name = name
+
+    # 2. Polymorphism:
+
+            # Polymorphism allows methods to do different things based on the object it is operating on.
+            # In this project, we have two types of employees: FullTimeEmployee and PartTimeEmployee. Both classes inherit from Employee, and both implement their own version of the method calculate_salary().
+            # The method calculate_salary() is overridden in each derived class, and when called, it behaves differently depending on whether the employee is full-time or part-time.
+            # This is an example of polymorphic behavior: calling the same method (calculate_salary()) but with different implementations depending on the object type.
+
+            # Example:
+                # def calculate_salary(self):
+                #     return self.get_salary() + self._bonus  # Full-time salary
+
+                # def calculate_salary(self):
+                #     return self._hourly_rate * self._hours_worked  # Part-time salary
+
+    # 3. Abstraction:
+
+                # Abstraction is the concept of hiding the complex implementation details and exposing only the essential features of an object.
+                # We use the abstract base class (Employee) to define a common interface (abstract methods like calculate_salary()) that all employee types must implement. This ensures that every employee type has a calculate_salary() method, but the implementation details of the method are hidden in the derived classes (FullTimeEmployee and PartTimeEmployee).
+                # The Employee class defines the structure (abstraction) for all employees but leaves the specific implementation of certain behaviors (like calculating salary) to the derived classes.
+
+                # Example:
+                    # from abc import ABC, abstractmethod
+
+                    # class Employee(ABC):
+                    #     @abstractmethod
+                    #     def calculate_salary(self):
+                    #         pass
