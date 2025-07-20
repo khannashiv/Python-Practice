@@ -57,7 +57,8 @@ class FullTimeEmployee(Employee):
         self._bonus = bonus
 
     def calculate_salary(self):
-        return self.get_salary() + self._bonus
+        # return self.get_salary() + self._bonus
+        return self._bonus + self._salary
     
     def display_info(self):
         super().display_info()
